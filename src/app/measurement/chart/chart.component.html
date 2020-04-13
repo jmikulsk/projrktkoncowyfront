@@ -1,1 +1,24 @@
-<p>chart works!</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script >
+
+  new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: [[${dataMap.keySet()}]],
+      datasets: [
+        {
+          backgroundColor: [[${labels}]],
+          data: [[${dataMap.values()}]]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      scales: {
+        yAxes: [{ticks: {beginAtZero: true}}]
+      }
+    }
+  });
+
+</script>

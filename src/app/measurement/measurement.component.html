@@ -2,12 +2,15 @@
   <div class="uk-navbar-center  ">
     <a routerLink="/" class="tekstczerowny uk-navbar-item uk-logo uk-text-bold">POMIARY</a>
     <ul class="uk-navbar-nav">
-      <li  class="uk-parent "><a routerLink="/" class="tekstzielony">Lista</a></li>
-      <li class="uk-parent "><a routerLink="/" class="tekstzielony">Wykres</a></li>
+      <li  class="uk-parent "><a routerLink="/measur" class="tekstzielony">Lista</a></li>
+      <li class="uk-parent "><a routerLink="/measur/chart" class="tekstzielony">Wykres</a></li>
       <li class="uk-parent "><a routerLink="/" class="tekstzielony">Srednia-dzienna</a></li>
     </ul>
   </div>
 </nav>
-<div class="uk-container ">
+<div class="uk-container uk-background-center-center uk-height-viewport uk-width-1-1@l " >
+
   <router-outlet></router-outlet>
 </div>
+
+<!--style="background-image: url(https://c.pxhere.com/photos/b4/5b/blur_board_capacitors_chips_circuit_circuit_board_close_up_component-1536693.jpg!d);-->

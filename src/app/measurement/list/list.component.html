@@ -1,3 +1,30 @@
-<div class="uk-background-blend-hard-light uk-background-primary uk-background-cover uk-background-fixed uk-height-viewport uk-panel uk-width-large uk-flex-center uk-flex-middle " style="background-image: url(https://static.turbosquid.com/Preview/2019/07/07__01_28_32/0001.jpg9D05E01A-E172-4A2C-9999-8B0F70086B63Zoom.jpg); width:1200px">
-  <p class="uk-h4">Hard Light</p>
-</div>
+ <div class="uk-container uk-margin-large-top  ">
+
+    <table class="uk-table uk-table-striped">
+      <thead>
+      <tr >
+        <th>Id</th>
+        <th>Data</th>
+        <th>Temperatura</th>
+        <th>Wilgotność</th>
+        <th>Dodatkowe info.</th>
+         <th style="text-align: center">Edycja</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pomiar of pomiary; let i = index" class="uk-width-1-6" >
+        <td>{{pomiar.id}}</td>
+        <td>{{pomiar.data}}</td>
+        <td>{{pomiar.temperatura}}</td>
+        <td >{{pomiar.wilgotnosc}}</td>
+        <td >aaa</td>
+        <td align="center">
+        <a ><input type="button" class="uk-button uk-button-secondary uk-width-small" value="Dodaj info."></a>
+        <a ><input type="button" class="uk-button uk-button-primary uk-width-small" value="Edytuj info"></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+

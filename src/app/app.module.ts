@@ -7,6 +7,8 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { MeasurementComponent } from './measurement/measurement.component';
 import { ListComponent } from './measurement/list/list.component';
 import { ChartComponent } from './measurement/chart/chart.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ChartComponent } from './measurement/chart/chart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
