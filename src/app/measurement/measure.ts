@@ -3,6 +3,6 @@ export class Pomiar {
   data: string;
   temperatura: number;
   wilgotnosc: number;
-  cisnienie: number;
+  info: string;
   // info: string;
 }
