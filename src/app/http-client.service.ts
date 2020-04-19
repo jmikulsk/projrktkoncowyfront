@@ -27,7 +27,7 @@ export class HttpClientService {
     return this.httpClient.get<Pomiar>(`${BASE_URL}/pomiary/single/${id}`);
   }
 
-  savePomiar(product: Pomiar) {
-    return this.httpClient.post(`${BASE_URL}/pomiary/save`, JSON.stringify(product), HTTP_OPTIONS);
+  savePomiar(pomiar: Pomiar) {
+    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`, JSON.stringify(pomiar), HTTP_OPTIONS);
   }
 }

@@ -9,6 +9,7 @@ import { ListComponent } from './measurement/list/list.component';
 import { ChartComponent } from './measurement/chart/chart.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { EditorComponent } from './measurement/list/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     IntroductionComponent,
     MeasurementComponent,
     ListComponent,
-    ChartComponent
+    ChartComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

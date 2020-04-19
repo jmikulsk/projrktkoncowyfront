@@ -3,24 +3,23 @@
     <table class="uk-table uk-table-striped">
       <thead>
       <tr >
-        <th>Id</th>
-        <th>Data</th>
-        <th>Temperatura</th>
-        <th>Wilgotność</th>
-        <th>Dodatkowe info.</th>
-         <th style="text-align: center">Edycja</th>
+        <th style="text-align: center">Id</th>
+        <th style="text-align: center">Data</th>
+        <th style="text-align: center">Temperatura</th>
+        <th style="text-align: center">Wilgotność</th>
+         <th style="text-align: center">INFORMACJE DODATKOWE</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let pomiar of pomiary; let i = index" class="uk-width-1-6" >
-        <td>{{pomiar.id}}</td>
-        <td>{{pomiar.data}}</td>
-        <td>{{pomiar.temperatura}}</td>
-        <td >{{pomiar.wilgotnosc}}</td>
-        <td >{{pomiar.info}}</td>
+      <tr *ngFor="let pomiar of pomiary;let i = index" class="uk-width-1-6" >
+        <td style="text-align: center">{{pomiar.id}}</td>
+        <td style="text-align: center">{{pomiar.data}}</td>
+        <td style="text-align: center">{{pomiar.temperatura}}</td>
+        <td style="text-align: center">{{pomiar.wilgotnosc}}</td>
+        <td style="text-align: center" >{{pomiar.info}}</td>
         <td align="center">
-        <a ><input type="button" class="uk-button uk-button-secondary uk-width-small" value="Dodaj info."></a>
-        <a ><input type="button" class="uk-button uk-button-primary uk-width-small" value="Edytuj info"></a>
+        <a routerLink="list/edit/{{pomiar.id}}"><input type="button" class="uk-button uk-button-secondary uk-width-small" value="EDYTUJ INFO"></a>
+
         </td>
       </tr>
       </tbody>
