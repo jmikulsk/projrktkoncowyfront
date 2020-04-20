@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   }
 
   pomiary: Pomiar[] = [];
-  newarr: Pomiar[];
+
 
   ngOnInit(): void {
 
