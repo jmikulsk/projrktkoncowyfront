@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClientService} from '../../http-client.service';
 import {Pomiar} from '../measure';
+import {sortTasksByPriority} from '@angular/compiler-cli/ngcc/src/execution/tasks/utils';
 
 @Component({
   selector: 'app-list',
@@ -9,10 +10,14 @@ import {Pomiar} from '../measure';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private httpClient: HttpClientService) { }
+  constructor(private httpClient: HttpClientService) {
+  }
 
   pomiary: Pomiar[] = [];
+  newarr: Pomiar[];
+
   ngOnInit(): void {
+
 
     this.getPomiary();
 
@@ -20,7 +25,7 @@ export class ListComponent implements OnInit {
 
   getPomiary() {
     this.httpClient.getPomiary().subscribe(p => this.pomiary = p);
+    }
 
-  }
 
 }
