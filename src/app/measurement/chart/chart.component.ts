@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { Chart } from 'chart.js';
 import {HttpClientService} from '../../http-client.service';
 import {Pomiar} from '../measure';
+import {Data} from '@angular/router';
 
 @Component({
   selector: 'app-chart',
@@ -17,12 +18,15 @@ export class ChartComponent implements OnInit {
   @ViewChild('mychart') public mychart;
   public pomiary: Pomiar[] = [];
   public test: number;
+  public data: new Data;
 
   public ngOnInit(): void {
+
 
     this.getPomiary();
     this.test = this.pomiary[100].id;
     console.log(this.test);
+    
   }
 
   public ngAfterViewInit() {
@@ -39,9 +43,9 @@ export class ChartComponent implements OnInit {
           borderColor: 'rgb(255,222,37)',
           fill: true,
           data: [
-            {x: new Date (1995,11,11,3,4,5).getFullYear(), y: this.pomiary[this.pomiary.length - 200].temperatura},
-            {x:  new Date(1996,11,11,3,4,5).getFullYear(), y: this.pomiary[this.pomiary.length - 99].temperatura},
-            {x:  new Date(1997,11,11,3,4,5).getFullYear(), y: this.pomiary[this.pomiary.length - 98].temperatura},
+            {x: new Date (1996,11,10,3,4,5), y: this.pomiary[this.pomiary.length - 200].temperatura},
+            {x:  new Date(1996,11,11,3,4,5), y: this.pomiary[this.pomiary.length - 99].temperatura},
+            {x:  this.pomiary[334].data, y: this.pomiary[this.pomiary.length - 98].temperatura},
             // {x: this.pomiary[this.pomiary.length-97].id, y: this.pomiary[this.pomiary.length-9].temperatura},
             // {x: this.pomiary[this.pomiary.length-96].id, y: this.pomiary[this.pomiary.length-96].temperatura},
             // {x: this.pomiary[this.pomiary.length-95].id, y: this.pomiary[this.pomiary.length-95].temperatura},
@@ -67,7 +71,12 @@ export class ChartComponent implements OnInit {
         },
         scales: {
           xAxes: [{
-            type: 'linear',
+            type: 'string',
+            time: {
+              displayFormats: {
+                quarter :'DD MMM YYYY'
+              }
+            },
             position: 'bottom',
 
             // ticks: {
