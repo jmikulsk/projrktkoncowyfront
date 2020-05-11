@@ -1,10 +1,21 @@
 export class Pomiar {
   private _id: number;
   private _data: string;
+  private _godzina: string;
   private _temperatura: number;
   private _wilgotnosc: number;
   private _info: string;
   // info: string;
+
+
+  get godzina(): string {
+    return this._godzina;
+  }
+
+  set godzina(value: string) {
+    this._godzina = value;
+  }
+
   get id(): number {
     return this._id;
   }

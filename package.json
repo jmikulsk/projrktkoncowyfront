@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "mode server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,14 +20,15 @@
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
     "bootstrap": "^4.4.1",
-    "core-js": "2.5.5",
-    "zone.js": "~0.10.2",
     "chart.js": "^2.7.2",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "core-js": "2.5.5",
     "express": "^4.17.1",
     "jquery": "^3.5.0",
     "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
-    "uikit": "^3.3.7"
+    "uikit": "^3.3.7",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.1",

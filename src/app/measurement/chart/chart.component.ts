@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { Chart } from 'chart.js';
+import {Chart} from 'chart.js';
 import {HttpClientService} from '../../http-client.service';
 import {Pomiar} from '../measure';
-import {Data} from '@angular/router';
+import {ActivatedRoute, Data} from '@angular/router';
 
 @Component({
   selector: 'app-chart',
@@ -10,23 +10,24 @@ import {Data} from '@angular/router';
   styleUrls: ['./chart.component.css'],
 })
 export class ChartComponent implements OnInit {
-  constructor(private httpClient: HttpClientService) { }
+  constructor(private httpClient: HttpClientService, private activeRoute: ActivatedRoute) {
+  }
 
   public name = 'Angular   6';
   public canvas: any;
   public ctx: any;
   @ViewChild('mychart') public mychart;
   public pomiary: Pomiar[] = [];
+  public pon: Pomiar = new Pomiar();
   public test: number;
-  public data: new Data;
+  public data: Data;
 
   public ngOnInit(): void {
 
 
     this.getPomiary();
-    this.test = this.pomiary[100].id;
-    console.log(this.test);
-    
+    console.log(this.pomiary[200].toString());
+
   }
 
   public ngAfterViewInit() {
@@ -43,9 +44,9 @@ export class ChartComponent implements OnInit {
           borderColor: 'rgb(255,222,37)',
           fill: true,
           data: [
-            {x: new Date (1996,11,10,3,4,5), y: this.pomiary[this.pomiary.length - 200].temperatura},
-            {x:  new Date(1996,11,11,3,4,5), y: this.pomiary[this.pomiary.length - 99].temperatura},
-            {x:  this.pomiary[334].data, y: this.pomiary[this.pomiary.length - 98].temperatura},
+            {x: 1, y: 2},
+            {x: 2, y:3},
+            {x: 3, y: 4},
             // {x: this.pomiary[this.pomiary.length-97].id, y: this.pomiary[this.pomiary.length-9].temperatura},
             // {x: this.pomiary[this.pomiary.length-96].id, y: this.pomiary[this.pomiary.length-96].temperatura},
             // {x: this.pomiary[this.pomiary.length-95].id, y: this.pomiary[this.pomiary.length-95].temperatura},
@@ -71,10 +72,10 @@ export class ChartComponent implements OnInit {
         },
         scales: {
           xAxes: [{
-            type: 'string',
+            type: 'date',
             time: {
               displayFormats: {
-                quarter :'DD MMM YYYY'
+                quarter: 'DD MMM YYYY'
               }
             },
             position: 'bottom',
@@ -107,8 +108,21 @@ export class ChartComponent implements OnInit {
     });
   }
 
+
   public getPomiary() {
     this.httpClient.getPomiary().subscribe((p) => this.pomiary = p);
   }
+
+  public getPomiar() {
+    this.activeRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        // tslint:disable-next-line:radix
+        this.httpClient.getPomiar(Number.parseInt(id)).subscribe(p => this.pon = p);
+      }
+
+    });
+  }
+
 
 }
