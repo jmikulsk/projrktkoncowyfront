@@ -36,10 +36,14 @@ export class ChartComponent implements OnInit {
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,  this.pomiary[16].godzina,  this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,  this.pomiary[6].godzina,  this.pomiary[4].godzina, this.pomiary[1].godzina],
+        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,
+          this.pomiary[16].godzina,  this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,
+          this.pomiary[6].godzina,  this.pomiary[4].godzina, this.pomiary[0].godzina],
         datasets: [{
           label: 'TEMPERATURA 24h',
-          data: [this.pomiary[24].temperatura, this.pomiary[22].temperatura, this.pomiary[20].temperatura, this.pomiary[18].temperatura, this.pomiary[16].temperatura, this.pomiary[14].temperatura, this.pomiary[12].temperatura, this.pomiary[10].temperatura, this.pomiary[8].temperatura , this.pomiary[6].temperatura, this.pomiary[4].temperatura, this.pomiary[1].temperatura],
+          data: [this.pomiary[24].temperatura, this.pomiary[22].temperatura, this.pomiary[20].temperatura, this.pomiary[18].temperatura,
+            this.pomiary[16].temperatura, this.pomiary[14].temperatura, this.pomiary[12].temperatura, this.pomiary[10].temperatura, this.pomiary[8].temperatura ,
+            this.pomiary[6].temperatura, this.pomiary[4].temperatura, this.pomiary[0].temperatura],
           backgroundColor: [
             'rgba(54, 162, 235, 0.3)',
 
@@ -71,10 +75,14 @@ export class ChartComponent implements OnInit {
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,  this.pomiary[16].godzina,  this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,  this.pomiary[6].godzina,  this.pomiary[4].godzina, this.pomiary[1].godzina],
+        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,  this.pomiary[16].godzina,
+          this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,  this.pomiary[6].godzina,  this.pomiary[4].godzina,
+          this.pomiary[0].godzina],
         datasets: [{
           label: 'WILGOTNOŚĆ 24h',
-          data: [this.pomiary[24].wilgotnosc, this.pomiary[22].wilgotnosc, this.pomiary[20].wilgotnosc, this.pomiary[18].wilgotnosc, this.pomiary[16].wilgotnosc, this.pomiary[14].wilgotnosc, this.pomiary[12].wilgotnosc, this.pomiary[10].temperatura, this.pomiary[8].temperatura , this.pomiary[6].wilgotnosc, this.pomiary[4].wilgotnosc, this.pomiary[1].wilgotnosc],
+          data: [this.pomiary[24].wilgotnosc, this.pomiary[22].wilgotnosc, this.pomiary[20].wilgotnosc, this.pomiary[18].wilgotnosc, this.pomiary[16].wilgotnosc,
+            this.pomiary[14].wilgotnosc, this.pomiary[12].wilgotnosc, this.pomiary[10].temperatura, this.pomiary[8].temperatura , this.pomiary[6].wilgotnosc,
+            this.pomiary[4].wilgotnosc, this.pomiary[0].wilgotnosc],
           backgroundColor: [
             'rgba(235,156,37,0.3)',
 
