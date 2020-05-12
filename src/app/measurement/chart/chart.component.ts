@@ -26,88 +26,82 @@ export class ChartComponent implements OnInit {
 
 
     this.getPomiary();
-    console.log(this.pomiary[200].toString());
+    this.ngAfterViewInit()
+
 
   }
 
   public ngAfterViewInit() {
-    this.canvas = this.mychart.nativeElement;
-    this.ctx = this.canvas.getContext('2d');
-
-    const myChart = new Chart(this.ctx, {
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
       type: 'line',
-
       data: {
+        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,  this.pomiary[16].godzina,  this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,  this.pomiary[6].godzina,  this.pomiary[4].godzina, this.pomiary[1].godzina],
         datasets: [{
-          label: 'Temperatura',
-          backgroundColor: 'rgba(255, 99, 132,0.4)',
-          borderColor: 'rgb(255,222,37)',
-          fill: true,
-          data: [
-            {x: 1, y: 2},
-            {x: 2, y:3},
-            {x: 3, y: 4},
-            // {x: this.pomiary[this.pomiary.length-97].id, y: this.pomiary[this.pomiary.length-9].temperatura},
-            // {x: this.pomiary[this.pomiary.length-96].id, y: this.pomiary[this.pomiary.length-96].temperatura},
-            // {x: this.pomiary[this.pomiary.length-95].id, y: this.pomiary[this.pomiary.length-95].temperatura},
-            // {x: this.pomiary[this.pomiary.length-94].id, y: this.pomiary[this.pomiary.length-94].temperatura},
-            // {x: this.pomiary[this.pomiary.length-93].id, y: this.pomiary[this.pomiary.length-93].temperatura},
-            // {x: this.pomiary[this.pomiary.length-92].id, y: this.pomiary[this.pomiary.length-92].temperatura},
-            // {x: this.pomiary[this.pomiary.length - 91].id, y: this.pomiary[this.pomiary.length - 91].temperatura},
+          label: 'TEMPERATURA 24h',
+          data: [this.pomiary[24].temperatura, this.pomiary[22].temperatura, this.pomiary[20].temperatura, this.pomiary[18].temperatura, this.pomiary[16].temperatura, this.pomiary[14].temperatura, this.pomiary[12].temperatura, this.pomiary[10].temperatura, this.pomiary[8].temperatura , this.pomiary[6].temperatura, this.pomiary[4].temperatura, this.pomiary[1].temperatura],
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.3)',
 
-            //             // {x: 3000, y: 5},
-            //             // {x: 3400, y: 4.75},
-            //             // {x: 3600, y: 4.75},
-            //             // {x: 5200, y: 6},
-            //             // {x: 6000, y: 9},
-            //             // {x: 7222, y: 10},
           ],
-        }],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+
+
+          ],
+          borderWidth: 3
+        }]
       },
       options: {
-        responsive: true,
-        title: {
-          display: true,
-          text: 'Temperatura',
-        },
         scales: {
-          xAxes: [{
-            type: 'date',
-            time: {
-              displayFormats: {
-                quarter: 'DD MMM YYYY'
-              }
-            },
-            position: 'bottom',
-
-            // ticks: {
-            //   userCallback: function() {
-            //
-            //     return 'dupa';
-            // //   }
-            // },
-            scaleLabel: {
-              labelString: 'Data',
-              display: true,
-            },
-          }],
           yAxes: [{
-            type: 'linear',
-            // ticks: {
-            //   userCallback: function(tick) {
-            //     return tick.toString() + 'm';
-            //   }
-            // },
-            scaleLabel: {
-              labelString: 'Temperatura Celcjusze',
-              display: true,
-            },
-          }],
-        },
+             ticks: {
+                userCallback: function (tick) {
+
+                  return tick.toString() + '°C';
+                },
+                beginAtZero: true,
+            }
+          }]
+        }
+      }
+    });
+
+    var ctx = document.getElementById('myChartW');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [this.pomiary[24].godzina, this.pomiary[22].godzina, this.pomiary[20].godzina, this.pomiary[18].godzina,  this.pomiary[16].godzina,  this.pomiary[14].godzina, this.pomiary[12].godzina, this.pomiary[10].godzina,  this.pomiary[8].godzina,  this.pomiary[6].godzina,  this.pomiary[4].godzina, this.pomiary[1].godzina],
+        datasets: [{
+          label: 'WILGOTNOŚĆ 24h',
+          data: [this.pomiary[24].wilgotnosc, this.pomiary[22].wilgotnosc, this.pomiary[20].wilgotnosc, this.pomiary[18].wilgotnosc, this.pomiary[16].wilgotnosc, this.pomiary[14].wilgotnosc, this.pomiary[12].wilgotnosc, this.pomiary[10].temperatura, this.pomiary[8].temperatura , this.pomiary[6].wilgotnosc, this.pomiary[4].wilgotnosc, this.pomiary[1].wilgotnosc],
+          backgroundColor: [
+            'rgba(235,156,37,0.3)',
+
+          ],
+          borderColor: [
+            'rgb(25,255,108)',
+
+
+          ],
+          borderWidth: 3
+        }]
       },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              userCallback: function (tick) {
+
+                return tick.toString() + '%';
+              },
+              beginAtZero: true,
+            },
+          }]
+        }
+      }
     });
   }
-
 
   public getPomiary() {
     this.httpClient.getPomiary().subscribe((p) => this.pomiary = p);

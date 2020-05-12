@@ -14,8 +14,8 @@
     <tr *ngFor="let pomiar of pomiary;let i = index" class="uk-width-1-6" >
       <td style="text-align: center">{{pomiar.id}}</td>
       <td style="text-align: center">{{pomiar.data}}  {{pomiar.godzina}}</td>
-      <td style="text-align: center">{{pomiar.temperatura}}</td>
-      <td style="text-align: center">{{pomiar.wilgotnosc}}</td>
+      <td style="text-align: center">{{pomiar.temperatura}} &#176;C</td>
+      <td style="text-align: center">{{pomiar.wilgotnosc}}%</td>
       <td style="text-align: center" >{{pomiar.info}}</td>
       <td align="center">
         <a routerLink="list/edit/{{pomiar.id}}"><input type="button" class="uk-button uk-button-secondary uk-width-small" value="EDYTUJ INFO"></a>
