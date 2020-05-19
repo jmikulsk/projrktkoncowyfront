@@ -1,18 +1,14 @@
-<div class="background-wrap">
-  <div class="background"></div>
+
+
+<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
+    <p>
+      <input  class="uk-text-center uk-card-title uk-align-center" type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
+    </p>
+    <p>
+      <input  class="uk-text-center uk-card-title uk-align-center" type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
+    </p>
+
+    <input class="uk-text-center uk-button uk uk-align-center uk-button-primary"  type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
+
 </div>
 
-<form id="accesspanel" action="">
-  <h1 id="litheader">Java Techie</h1>
-  <div class="inset">
-    <p>
-      <input type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
-    </p>
-    <p>
-      <input type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
-    </p>
-  </div>
-  <p class="p-container">
-    <input type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
-  </p>
-</form>
