@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { EditorComponent } from './measurement/list/editor/editor.component';
 import { ChartWComponent } from './measurement/chart-w/chart-w.component';
+import { LoginComponent } from './measurement/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChartWComponent } from './measurement/chart-w/chart-w.component';
     ListComponent,
     ChartComponent,
     EditorComponent,
-    ChartWComponent
+    ChartWComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

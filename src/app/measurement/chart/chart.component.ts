@@ -109,6 +109,7 @@ export class ChartComponent implements OnInit {
         }
       }
     });
+
   }
 
   public getPomiary() {
@@ -125,6 +126,7 @@ export class ChartComponent implements OnInit {
 
     });
   }
+
 
 
 }

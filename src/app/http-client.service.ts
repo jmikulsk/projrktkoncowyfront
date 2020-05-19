@@ -11,12 +11,17 @@ const HTTP_OPTIONS = {headers: new HttpHeaders({'Content-Type': 'application/jso
   providedIn: 'root'
 })
 export class HttpClientService {
+  userName : String;
+  Passwordd : String;
 
   constructor(private httpClient: HttpClient) {
   }
 
   getPomiary(): Observable<Pomiar[]> {
-    return this.httpClient.get<Pomiar[]>(`${BASE_URL}/pomiary`);
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.get<Pomiar[]>(`${BASE_URL}/pomiary`, {headers });
+
+
   }
 
   removePomiar(id: number) {
@@ -30,4 +35,14 @@ export class HttpClientService {
   savePomiar(pomiar: Pomiar) {
     return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`, JSON.stringify(pomiar), HTTP_OPTIONS);
   }
+  public login(username : string,password : string){
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
+    this.userName =username;
+    this.Passwordd= password
+    return this.httpClient.get(`${BASE_URL}/`, {headers, responseType: 'text' as 'json'});
+  }
+  // public getUsers(username : string,password : string){
+  //   const headers=new HttpHeaders({Authorization: 'Basic '+btoa(("Kuba"+ ":"+"Password"))});
+  //   return this.httpClient.get(`${BASE_URL}/getUsers`, {headers, responseType: 'text' as 'json'});
+  // }
 }
