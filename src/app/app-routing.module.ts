@@ -17,7 +17,7 @@ const routes: Routes = [
       {path: 'chart', component: ChartComponent},
       {path: 'chartW', component: ChartWComponent},
       {path: 'list/edit', component: EditorComponent},
-      {path: 'list/edit/:id', component: EditorComponent}
+      {path: 'edit/:id', component: EditorComponent}
     ]},
   {path: 'login',  component: LoginComponent},
 ];
