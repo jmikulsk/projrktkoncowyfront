@@ -29,7 +29,7 @@ export class HttpClientService {
   }
 
   getPomiar(id: number): Observable<Pomiar> {
-    return this.httpClient.get<Pomiar>(`${BASE_URL}/pomiary/single/${id}`);
+    return this.httpClient.get<Pomiar>(`${BASE_URL}/pomiary/single/${id}`, HTTP_OPTIONS);
   }
 
   savePomiar(pomiar: Pomiar) {
