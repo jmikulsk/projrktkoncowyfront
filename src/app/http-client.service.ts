@@ -34,7 +34,7 @@ export class HttpClientService {
   }
 
   savePomiar(pomiar: Pomiar) {
-    return this.httpClient.post(`https://projektkoncowyback.herokuapp.com/noAuth/zapisz`, JSON.stringify(pomiar));
+    return this.httpClient.post('http://projektkoncowyback.herokuapp.com/noAuth/zapisz', JSON.stringify(pomiar));
   }
   public login(username : string,password : string){
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
