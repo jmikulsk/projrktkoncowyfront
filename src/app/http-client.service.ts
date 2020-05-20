@@ -29,11 +29,13 @@ export class HttpClientService {
   }
 
   getPomiar(id: number): Observable<Pomiar> {
-    return this.httpClient.get<Pomiar>(`${BASE_URL}/pomiary/single/${id}`, HTTP_OPTIONS);
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.get<Pomiar>(`${BASE_URL}/pomiary/single/${id}`,{headers});
   }
 
   savePomiar(pomiar: Pomiar) {
-    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`, JSON.stringify(pomiar), HTTP_OPTIONS);
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`, JSON.stringify(pomiar), {headers});
   }
   public login(username : string,password : string){
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
