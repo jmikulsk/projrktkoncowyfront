@@ -1,6 +1,27 @@
 
 
+
 <div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
+  <div>
+    <svg version="1.1"  viewBox="0 0 800 300">
+      <rect class="mouse" x="0" y="0" width="800" height="300"/>
+      <polygon class="diamondOrCh tulip" points="400, 280, 310, 150, 400, 20, 490, 150"/>
+      <style>
+        .mouse { fill: #ffffff; }
+        .tulip { fill: #CC2954; }
+        .diamondOrCh {
+          animation-name: diamondOriginChanged;
+          animation-duration: 4s;
+          animation-iteration-count: infinite;
+          transform-origin: 50% 50%;
+        }
+        @keyframes diamondOriginChanged {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+      </style>
+    </svg>
+  </div>
     <p>
       <input  class="uk-text-center uk-card-title uk-align-center" type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
     </p>
@@ -11,4 +32,5 @@
     <input class="uk-text-center uk-button uk uk-align-center uk-button-primary"  type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
 
 </div>
+
 
