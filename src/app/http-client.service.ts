@@ -2,6 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pomiar} from './measurement/measure';
+import {constants} from 'http2';
+import HTTP2_HEADER_CONTENT_TYPE = module
+import {ajaxGetJSON} from 'rxjs/internal-compatibility';
 
 
 const BASE_URL = 'https://projektkoncowyback.herokuapp.com/api';
@@ -34,7 +37,8 @@ export class HttpClientService {
   }
 
   savePomiar(pomiar: Pomiar) {
-    return this.httpClient.post('http://projektkoncowyback.herokuapp.com/noAuth/zapisz', JSON.stringify(pomiar));
+    const headers = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`, JSON.stringify(pomiar),{headers : headers});
   }
   public login(username : string,password : string){
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
