@@ -1,0 +1,29 @@
+<div class="uk-container uk-margin-large-top  ">
+
+  <table class="uk-table uk-table-striped">
+    <thead>
+    <tr >
+      <th style="text-align: center">Link</th>
+      <th style="text-align: center">Informacje dodatkowe</th>
+      <th><a routerLink="edit/"><input style="background-color: #22d209; color: white" class="uk-button uk-align-right" type="button" value="Dodaj link"></a></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let link of linki;let i = index" class="uk-width-1-6" >
+      <td style="text-align: center">{{link.link}} </td>
+      <td style="text-align: center">{{link.informacja}} </td>
+
+
+      <td align="center">
+        <a routerLink="edit/{{link.id}}"><input type="button" class="uk-button uk-button-secondary uk-width-small uk-align-right " value="EDYTUJ INFO"></a>
+        <a ><input (click)="usunLinki(link.id)" type="button" class="uk-button uk-button-secondary uk-width-small uk-button-danger uk-align-right" value="USUŃ"></a>
+
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+

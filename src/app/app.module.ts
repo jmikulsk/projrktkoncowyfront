@@ -9,10 +9,12 @@ import { ListComponent } from './measurement/list/list.component';
 import { ChartComponent } from './measurement/chart/chart.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { EditorComponent } from './measurement/list/editor/editor.component';
+import { EditorComponent } from './measurement/list/editorL/editor.component';
 import { ChartWComponent } from './measurement/chart-w/chart-w.component';
 import { LoginComponent } from './measurement/login/login.component';
 import {AuthGuard} from './measurement/auth.guard';
+import { LinkiComponent } from './measurement/linki/linki.component';
+import { EditorLinkiComponent } from './measurement/linki/editor-linki/editor-linki.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import {AuthGuard} from './measurement/auth.guard';
     ChartComponent,
     EditorComponent,
     ChartWComponent,
-    LoginComponent
+    LoginComponent,
+    LinkiComponent,
+    EditorLinkiComponent,
+
+
   ],
   imports: [
     BrowserModule,

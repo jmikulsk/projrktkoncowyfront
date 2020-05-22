@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pomiar} from './measurement/measure';
 import {parseJsonSchemaToOptions} from '@angular/cli/utilities/json-schema';
+import {Linki} from './measurement/linki';
 
 
 const BASE_URL = 'https://projektkoncowyback.herokuapp.com/api';
@@ -25,9 +26,9 @@ export class HttpClientService {
 
   }
 
-  removePomiar(id: number) {
-    return this.httpClient.delete(`${BASE_URL}/pomiary/remove/${id}`);
-  }
+  // removePomiar(id: number) {
+  //   return this.httpClient.delete(`${BASE_URL}/pomiary/remove/${id}`);
+  // }
 
   getPomiar(id: number): Observable<Pomiar> {
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
@@ -37,10 +38,14 @@ export class HttpClientService {
 
   savePomiar(pomiar: Pomiar) {
     let headerss = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd), 'Content-Type':  'application/json',});
-
-
     return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`,
       JSON.stringify(pomiar), {headers: headerss});
+
+  }
+  saveLinki(link: Linki) {
+    let headerss = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd), 'Content-Type':  'application/json',});
+    return this.httpClient.post(`${BASE_URL}/link/zapisz`,
+      JSON.stringify(link), {headers: headerss});
 
   }
   public login(username : string,password : string){
@@ -56,8 +61,19 @@ export class HttpClientService {
     this.userName =" ";
     this.Passwordd=" ";
   }
-  // public getUsers(username : string,password : string){
-  //   const headers=new HttpHeaders({Authorization: 'Basic '+btoa(("Kuba"+ ":"+"Password"))});
-  //   return this.httpClient.get(`${BASE_URL}/getUsers`, {headers, responseType: 'text' as 'json'});
-  // }
+
+  getLinki(): Observable<Linki[]> {
+    const headers = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.get<Linki[]>(`${BASE_URL}/linki`, {headers });
+  }
+
+  getLink(id: number): Observable<Linki> {
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.get<Linki>(`${BASE_URL}/linki/single/${id}`,{headers});
+
+  }
+  removeLink(id: number) {
+    const headers=new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    return this.httpClient.delete(`${BASE_URL}/linki/usun/${id}`, {headers});
+  }
 }
