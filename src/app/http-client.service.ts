@@ -42,7 +42,7 @@ export class HttpClientService {
  }
 
   }
-  public login(username : string,password : string){
+  public login(username : string, password : string){
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
     this.userName =username;
     this.Passwordd= password;
