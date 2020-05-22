@@ -36,10 +36,8 @@ export class HttpClientService {
   }
 
   savePomiar(pomiar: Pomiar) {
-       let headers = new HttpHeaders({Authorization: 'Basic
-    '+btoa(this.userName + ":" + this.Passwordd)});
-
-   return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`,
+       let headers = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+      return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`,
         JSON.stringify(pomiar), {headers: headers});
  }
 
