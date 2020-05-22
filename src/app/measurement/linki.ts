@@ -1,5 +1,5 @@
 export class Linki {
-  private id: number;
+  private _id: number;
   private link: string;
   private informacja: string;
 
@@ -8,8 +8,8 @@ export class Linki {
     return this._id;
   }
 
-  set idd(value: number) {
-    this.id = value;
+  set id(value: number) {
+    this._id = value;
   }
 
   get linkk(): string {
