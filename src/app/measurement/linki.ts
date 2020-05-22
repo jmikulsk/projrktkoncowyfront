@@ -1,30 +1,30 @@
 export class Linki {
-  private id: number;
-  private link: string;
-  private informacja: string;
+  private _id: number;
+  private _link: string;
+  private _informacja: string;
 
 
-  get _id(): number {
-    return this.id;
+  get id(): number {
+    return this._id;
   }
 
-  set _id(value: number) {
-    this.id = value;
+  set id(value: number) {
+    this._id = value;
   }
 
-  get _link(): string {
-    return this.link;
+  get link(): string {
+    return this._link;
   }
 
-  set _link(value: string) {
-    this.link = value;
+  set link(value: string) {
+    this._link = value;
   }
 
-  get _informacja(): string {
-    return this.informacja;
+  get informacja(): string {
+    return this._informacja;
   }
 
-  set _informacja(value: string) {
-    this.informacja = value;
+  set informacja(value: string) {
+    this._informacja = value;
   }
 }
