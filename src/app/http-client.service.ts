@@ -36,9 +36,11 @@ export class HttpClientService {
   }
 
   savePomiar(pomiar: Pomiar) {
-    let headers = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd)});
+    let headerss = new HttpHeaders({Authorization: 'Basic '+btoa(this.userName + ":" + this.Passwordd), 'Content-Type':  'application/json',});
 
-    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`,  JSON.stringify(pomiar));
+
+    return this.httpClient.post(`${BASE_URL}/pomiary/zapisz`,
+      JSON.stringify(pomiar), {headers: headerss});
 
   }
   public login(username : string,password : string){
@@ -46,6 +48,7 @@ export class HttpClientService {
     this.userName =username;
     this.Passwordd= password;
     return this.httpClient.get(`${BASE_URL}/`, {headers, responseType: 'text' as 'json'});
+
   }
   // public getUsers(username : string,password : string){
   //   const headers=new HttpHeaders({Authorization: 'Basic '+btoa(("Kuba"+ ":"+"Password"))});

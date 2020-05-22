@@ -24,7 +24,7 @@ export class EditorComponent implements OnInit {
 
   savePomiar(pomiar: Pomiar) {
     this.httpClient.savePomiar(pomiar).subscribe(r => {
-      this.router.navigate(['/measur']);
+      this.router.navigate(['/measur/list']);
     });
   }
 
