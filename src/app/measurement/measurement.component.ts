@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClientService} from '../http-client.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-measurement',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeasurementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: HttpClientService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
-
+  doLogOut(){
+    this.service.logOut();
+    this.router.navigate(["/login"]);
+  }
 }

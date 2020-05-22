@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { EditorComponent } from './measurement/list/editor/editor.component';
 import { ChartWComponent } from './measurement/chart-w/chart-w.component';
 import { LoginComponent } from './measurement/login/login.component';
+import {AuthGuard} from './measurement/auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LoginComponent } from './measurement/login/login.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

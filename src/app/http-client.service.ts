@@ -14,7 +14,7 @@ const HTTP_OPTIONS = {headers: new HttpHeaders({'Content-Type': 'application/jso
 export class HttpClientService {
   userName : String;
   Passwordd : String;
-
+  isLogged = false;
   constructor(private httpClient: HttpClient) {
   }
 
@@ -47,8 +47,14 @@ export class HttpClientService {
     const headers=new HttpHeaders({Authorization: 'Basic '+btoa(username + ":" + password)});
     this.userName =username;
     this.Passwordd= password;
+    this.isLogged=true;
     return this.httpClient.get(`${BASE_URL}/`, {headers, responseType: 'text' as 'json'});
 
+
+  }
+  public logOut(){
+    this.userName =" ";
+    this.Passwordd=" ";
   }
   // public getUsers(username : string,password : string){
   //   const headers=new HttpHeaders({Authorization: 'Basic '+btoa(("Kuba"+ ":"+"Password"))});

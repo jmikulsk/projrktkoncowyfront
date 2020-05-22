@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     resp.subscribe(data => {
       this.router.navigate(["/measur/list"])
     });
-
   }
+
 
 }

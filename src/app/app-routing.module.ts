@@ -7,12 +7,13 @@ import {ChartComponent} from './measurement/chart/chart.component';
 import {EditorComponent} from './measurement/list/editor/editor.component';
 import {ChartWComponent} from './measurement/chart-w/chart-w.component';
 import {LoginComponent} from './measurement/login/login.component';
+import {AuthGuard} from './measurement/auth.guard';
 
 
 const routes: Routes = [
 
   { path: '', redirectTo:"login",pathMatch:"full"},
-  {path: 'measur' , component: MeasurementComponent , children:[
+  {path: 'measur' , canActivate : [AuthGuard], component: MeasurementComponent , children:[
       {path: 'list' , component: ListComponent},
       {path: 'chart', component: ChartComponent},
       {path: 'chartW', component: ChartWComponent},
