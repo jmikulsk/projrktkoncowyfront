@@ -15,6 +15,7 @@ import {EditorLinkiComponent} from './measurement/linki/editor-linki/editor-link
 const routes: Routes = [
 
   { path: '', redirectTo:"login",pathMatch:"full"},
+  {path: 'intro', canActivate : [AuthGuard], component: IntroductionComponent},
   {path: 'measur' , canActivate : [AuthGuard], component: MeasurementComponent , children:[
       {path: 'list' , component: ListComponent},
       {path: 'chart', component: ChartComponent},

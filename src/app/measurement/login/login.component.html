@@ -1,27 +1,8 @@
+<body class="uk-background-muted uk-height-viewport uk-width-viewport uk-position-top">
+<img src="assets/img/aaa.svg" width="1200" height="300" class="uk-background-cover uk-background-top-center uk-height-viewport" >
 
+<div class="uk-position-top-center uk-margin-xlarge-top uk-margin-large-bottom  " style="width: 400px; margin: 300px auto">
 
-
-<div class="uk-card-default uk-card uk-card-body" style="width: 400px; margin: 300px auto">
-  <div>
-    <svg version="1.1"  viewBox="0 0 800 300">
-      <rect class="mouse" x="0" y="0" width="800" height="300"/>
-      <polygon class="diamondOrCh tulip" points="400, 280, 310, 150, 400, 20, 490, 150"/>
-      <style>
-        .mouse { fill: #ffffff; }
-        .tulip { fill: #CC2954; }
-        .diamondOrCh {
-          animation-name: diamondOriginChanged;
-          animation-duration: 4s;
-          animation-iteration-count: infinite;
-          transform-origin: 50% 50%;
-        }
-        @keyframes diamondOriginChanged {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
-        }
-      </style>
-    </svg>
-  </div>
     <p>
       <input  class="uk-text-center uk-card-title uk-align-center" type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
     </p>
@@ -31,6 +12,30 @@
 
     <input class="uk-text-center uk-button uk uk-align-center uk-button-primary"  type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
 
+
+  </div>
+
+
+<div class="uk-position-bottom "style="background-color: #FFFFFF">
+  <div class=" uk-grid-large uk-child-width-expand@s uk-text-center ">
+    <div>
+      <div class="uk-card uk-card-default uk-card-body uk-grid-match">
+        <a uk-icon="receiver" class="uk-position-top-center uk-margin-top .uk-text-bold"></a>
+        <p class="uk-position-center uk-margin-bottom uk-text-bold">Brak numeru.</p>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-secondary uk-card-body uk-grid-match">
+        <a uk-icon="warning" class="uk-position-top-center uk-margin-top .uk-text-bold"></a>
+        <p class="uk-position-center uk-margin-bottom uk-text-bold">Strona wyłącznie dla jednego USERa</p>
+      </div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-card-body uk-grid-match">
+        <a uk-icon="user" class="uk-position-top-center uk-margin-top"></a>
+        <p class="uk-position-center uk-margin-bottom uk-text-bold">USER : KUBA </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-
+</body>

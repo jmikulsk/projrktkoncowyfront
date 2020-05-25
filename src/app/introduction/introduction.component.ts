@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClientService} from '../http-client.service';
 
 @Component({
   selector: 'app-introduction',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: HttpClientService) { }
 
   ngOnInit(): void {
   }
