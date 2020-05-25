@@ -1,16 +1,16 @@
 .mojnav{
-  background-color: darkslategray;
+  background-color: #012c00;
 }
 .tekstczerowny{
-  color: red;
+  color: #ffe692;
 }
 .tekstzielony{
-  color: wheat;
+  color: #f0c24a;
   font-size: large;
 
 }
 .szerokosckontenerac{
-  background-color: green;
+  background-color: #fee0bc;
 }
 #image{
   opacity:0.5;

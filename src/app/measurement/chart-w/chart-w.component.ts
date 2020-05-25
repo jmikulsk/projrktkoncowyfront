@@ -39,7 +39,7 @@ export class ChartWComponent implements OnInit {
         labels:[this.pomiary[324].data, this.pomiary[312].data, this.pomiary[300].data, this.pomiary[288].data, this.pomiary[276].data, this.pomiary[264].data,
           this.pomiary[252].data,  this.pomiary[240].data, this.pomiary[228].data, this.pomiary[216].data, this.pomiary[204].data, this.pomiary[192].data,
             this.pomiary[180].data, this.pomiary[168].data, this.pomiary[156].data, this.pomiary[144].data, this.pomiary[132].data, this.pomiary[120].data,
-            this.pomiary[108].godzina, this.pomiary[96].data,  this.pomiary[84].data, this.pomiary[72].data, this.pomiary[60].data, this.pomiary[48].data,
+            this.pomiary[108].data, this.pomiary[96].data,  this.pomiary[84].data, this.pomiary[72].data, this.pomiary[60].data, this.pomiary[48].data,
             this.pomiary[36].data,  this.pomiary[24].data,  this.pomiary[12].data, this.pomiary[0].data],
         datasets: [{
           label: 'TEMPERATURA Tydzień',
