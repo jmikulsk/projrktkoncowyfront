@@ -15,6 +15,8 @@ import { LoginComponent } from './measurement/login/login.component';
 import {AuthGuard} from './measurement/auth.guard';
 import { LinkiComponent } from './measurement/linki/linki.component';
 import { EditorLinkiComponent } from './measurement/linki/editor-linki/editor-linki.component';
+import { ChartAllComponent } from './measurement/chart-all/chart-all.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { EditorLinkiComponent } from './measurement/linki/editor-linki/editor-li
     LoginComponent,
     LinkiComponent,
     EditorLinkiComponent,
+    ChartAllComponent,
+
 
 
   ],

@@ -10,6 +10,8 @@ import {LoginComponent} from './measurement/login/login.component';
 import {AuthGuard} from './measurement/auth.guard';
 import {LinkiComponent} from './measurement/linki/linki.component';
 import {EditorLinkiComponent} from './measurement/linki/editor-linki/editor-linki.component';
+import {ChartAllComponent} from './measurement/chart-all/chart-all.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
       {path: 'list' , component: ListComponent},
       {path: 'chart', component: ChartComponent},
       {path: 'chartW', component: ChartWComponent},
+      {path: 'chartAll', component: ChartAllComponent},
       {path: 'list/edit', component: EditorComponent},
       {path: 'list/edit/:id', component: EditorComponent},
       {path: 'listL' , component: LinkiComponent},
