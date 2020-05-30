@@ -1,26 +1,26 @@
-<body class="uk-background-muted    ">
-<img src="assets/img/aaa.svg" width="1200" height="1000" class="uk-background-cover "  >
+<div  >
+  <div class="uk-background-center-center  " style="background-image: url(assets/img/bbb.svg); height: 800px;" alt="Example image" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" ></div>
+<div class="uk-position-top-center uk-margin-xlarge-top uk-margin-large-bottom  "
+     style="width: 400px; margin: 300px auto">
+  <p>
+    <input class="uk-text-center uk-card-title uk-align-center" type="text" name="username" [(ngModel)]="username"
+           id="email" placeholder="username">
+  </p>
+  <p>
+    <input class="uk-text-center uk-card-title uk-align-center" type="password" name="password" [(ngModel)]="password"
+           id="password" placeholder="password">
+  </p>
 
-<div class="uk-position-top-center uk-margin-xlarge-top uk-margin-large-bottom  " style="width: 400px; margin: 300px auto">
-
-    <p>
-      <input  class="uk-text-center uk-card-title uk-align-center" type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
-    </p>
-    <p>
-      <input  class="uk-text-center uk-card-title uk-align-center" type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
-    </p>
-
-    <input class="uk-text-center uk-button uk uk-align-center uk-button-primary"  type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
-
-  </div>
-
-
-<div class="uk-position-bottom "style="background-color: #FFFFFF">
+  <input class="uk-text-center uk-button uk uk-align-center uk-button-primary  uk-animation-reverse" type="submit" name="Login" id="go"
+         value="Login" (click)="doLogin()">
+</div>
+</div>
+<div class="uk-position-bottom uk-position-fixed" style="background-color: #FFFFFF">
   <div class=" uk-grid-large uk-child-width-expand@s uk-text-center ">
     <div>
       <div class="uk-card uk-card-default uk-card-body uk-grid-match">
         <a uk-icon="receiver" class="uk-position-top-center uk-margin-top .uk-text-bold"></a>
-        <p class="uk-position-center uk-margin-bottom uk-text-bold">Brak numeru.</p>
+        <p class="uk-position-center uk-margin-bottom uk-text-bold">888-000-###</p>
       </div>
     </div>
     <div>
@@ -38,4 +38,3 @@
   </div>
 </div>
 
-</body>
